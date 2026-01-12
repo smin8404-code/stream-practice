@@ -18,6 +18,17 @@ st.error("❌ 오류 메시지입니다.")
 
 st.write("지금 오른쪽 화면은 개인 화면 \n\n"
     "변경 사항을 반영하기 위해서는 왼쪽에 있는 파란 동그라미 아이콘 활용\n\n"
-         "변경 내용 동기화 를 누르시면 git fetch 하냐고 하면 Yes 누르면 된다. \n\n"
-         "이후에는 streamlit 메인 페이지에서 아이콘 눌러서 서버 올라온거 공유하면 된다. \n\n " \
-         "동기화 안되면 Reboot\n\n")
+    "변경 내용 동기화 를 누르시면 git fetch 하냐고 하면 Yes 누르면 된다. \n\n"
+    "이후에는 streamlit 메인 페이지에서 아이콘 눌러서 서버 올라온거 공유하면 된다. \n\n " \
+    "동기화 안되면 Reboot\n\n")
+
+
+import streamlit as st
+import pandas as pd
+
+st.title("1️⃣ ✅ 공개 Google Sheet 읽기")
+st.info("📘 누구나 볼 수 있도록 공개된 시트를 Pandas로 직접 불러오는 가장 간단한 방법입니다.\n📎 링크는 반드시 `export?format=csv` 형태로 설정하세요.")
+
+csv_url1 = "https://docs.google.com/spreadsheets/d/1VC_q8HJfIufjGVR2zGRcJjBgkefIbp6Pv01rQ1uvoXI/export?format=csv"
+df1 = pd.read_csv(csv_url1)
+st.dataframe(df1)
